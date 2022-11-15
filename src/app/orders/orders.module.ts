@@ -6,6 +6,9 @@ import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orde
 import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.component';
 import { PageEditOrderComponent } from './pages/page-edit-order/page-edit-order.component';
 import { TestComponent } from './pages/test/test.component';
+import { SharedModule } from '../shared/shared.module';
+import { FormOrderComponent } from './components/form-order/form-order.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,11 +16,14 @@ import { TestComponent } from './pages/test/test.component';
     PageListOrdersComponent,
     PageAddOrderComponent,
     PageEditOrderComponent,
-    TestComponent
+    TestComponent,
+    FormOrderComponent
   ],
   imports: [
     CommonModule,
-    OrdersRoutingModule
+    OrdersRoutingModule,
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class OrdersModule { }

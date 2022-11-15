@@ -1,1 +1,10 @@
-<p>page-add-order works!</p>
+<div class="container">
+  <!-- ici on veut un formulaire -->
+  <app-form-order [init]='item' (submitted)='onAdd($event)'></app-form-order>
+</div>
+
+<!-- Dans le TS de page-add-order, on fait un new Order() -->
+<!-- Dans le TS de page-edit-order, on récupère un order existant -->
+
+
+

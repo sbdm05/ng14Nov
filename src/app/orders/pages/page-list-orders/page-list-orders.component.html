@@ -1,1 +1,35 @@
-<p>page-list-orders works!</p>
+<h1>Liste des commandes</h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <!-- itérer dans headers avec *ngFor -->
+      <th *ngFor="let item of headers" scope="col">{{item}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- itérer dans le tableau collection -->
+    <tr *ngFor="let item of collection">
+      <td>Action</td>
+      <td>{{item.typePresta}}</td>
+      <td>{{item.client}}</td>
+      <td>{{item.nbJours}}</td>
+      <td>{{item.tjmHt}}</td>
+      <td>Total Ht</td>
+      <td>Total TTC</td>
+      <td>{{item.state}}</td>
+
+    </tr>
+
+
+  </tbody>
+
+  <!-- bouton pour ajouter une commander -->
+  <app-btn
+  label='Ajouter'
+  route='/orders/add'
+  styleBtn='btn btn-danger'
+  ></app-btn>
+
+</table>

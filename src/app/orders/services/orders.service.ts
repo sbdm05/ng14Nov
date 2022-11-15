@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
+import { environment } from 'src/environments/environment';
 
 // décorateur accessibla grâce à providedIn
 @Injectable({
@@ -12,8 +13,13 @@ export class OrdersService {
   // on ajoute le * pour les observables
   private collection$!: Observable<Order[]>;
 
+  // On récupère l'url stockée dans environment
+  private urlApi = environment.urlApi;
+
   constructor(private http: HttpClient) {
-    this.collection = this.http.get<Order[]>('http://localhost:5005/orders');
+    // pour utiliser les backticks, touche altGr7
+    // template strings = template literals
+    this.collection = this.http.get<Order[]>(`${this.urlApi}/orders`);
   }
 
   // getter =  propriété
