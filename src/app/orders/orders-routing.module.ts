@@ -9,7 +9,7 @@ const routes: Routes = [
   // si la route est orders alors on affiche PageListOrders
   { path: 'orders', component: PageListOrdersComponent },
   { path: 'orders/add', component: PageAddOrderComponent },
-  { path: 'orders/edit', component: PageEditOrderComponent },
+  { path: 'orders/edit/:id', component: PageEditOrderComponent },
   { path: 'test', component: TestComponent },
 ];
 

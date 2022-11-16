@@ -35,5 +35,21 @@ export class OrdersService {
     this.collection$ = col
   }
 
+  // méthode post
+  // observable => this.ordersService.add(item).subscribe()
+  public add(item: Order): Observable<Order>{
+    return this.http.post<Order>(`${this.urlApi}/orders`, item);
+  }
+
+  // méthode pour retrouver un élément par son id
+  public getItemById(id: number): Observable<Order>{
+    return this.http.get<Order>(`${this.urlApi}/orders/${id}`);
+  }
+
+  // méthode pour modifier l'objet
+  public update(obj: Order): Observable<Order>{
+    return this.http.put<Order>(`${this.urlApi}/orders/${obj.id}`, obj);
+  }
+
 
 }

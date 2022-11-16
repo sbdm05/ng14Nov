@@ -7,12 +7,12 @@
   <!--instance de header-->
   <!-- ici contenu du header -->
   <!-- ajouter un btn + evenement -->
-  header
+  <button (click)='onClick()'>Afficher/Supprimer</button>
   <app-header></app-header>
 </header>
 <!-- <main [ngClass]="{'class': condition}" -->
 <!-- close-aside -->
-<main>
+<main [ngClass]="{'close-aside': !open}">
   <div class="shadow position-fixed">
   </div>
   <aside>

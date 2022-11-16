@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { OrdersRoutingModule } from './orders-routing.module';
@@ -17,13 +17,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     PageAddOrderComponent,
     PageEditOrderComponent,
     TestComponent,
-    FormOrderComponent
+    FormOrderComponent,
   ],
   imports: [
     CommonModule,
     OrdersRoutingModule,
     SharedModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
+  providers: [{ provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' }]
 })
-export class OrdersModule { }
+export class OrdersModule {}
