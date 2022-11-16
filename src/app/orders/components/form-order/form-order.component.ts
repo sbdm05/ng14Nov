@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 
@@ -32,14 +32,17 @@ export class FormOrderComponent implements OnInit {
       nbJours: [this.init.nbJours],
       tva: [this.init.tva],
       state: [this.init.state],
-      typePresta: [this.init.typePresta],
-      client: [this.init.client],
+      typePresta: [
+        this.init.typePresta,
+        [Validators.required, Validators.minLength(4), Validators.maxLength(10)],
+      ],
+      client: [this.init.client, Validators.required],
       comment: [this.init.comment],
       id: [this.init.id],
     });
   }
 
-  onSubmit(){
+  onSubmit() {
     // console.log('cliqué');
     // obtenir l'objet complet
     console.log(this.form.value);

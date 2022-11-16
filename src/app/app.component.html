@@ -7,8 +7,13 @@
   <!--instance de header-->
   <!-- ici contenu du header -->
   <!-- ajouter un btn + evenement -->
-  <button (click)='onClick()'>Afficher/Supprimer</button>
-  <app-header></app-header>
+  <!-- <button (click)='onClick()'>Afficher/Supprimer</button> -->
+<span (click)='onClick()'>
+  <!-- *ngIf -->
+  <app-icon-close *ngIf='open'></app-icon-close>
+  <app-icon-nav *ngIf='!open'></app-icon-nav>
+</span>
+  <!-- <app-header></app-header> -->
 </header>
 <!-- <main [ngClass]="{'class': condition}" -->
 <!-- close-aside -->

@@ -9,6 +9,7 @@ import { TestComponent } from './pages/test/test.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormOrderComponent } from './components/form-order/form-order.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IconsModule } from '../icons/icons.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     OrdersRoutingModule,
     SharedModule,
     ReactiveFormsModule,
+    IconsModule
   ],
   providers: [{ provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' }]
 })

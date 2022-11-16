@@ -1,4 +1,8 @@
-<a [routerLink]='route' [ngClass]='styleBtn'>{{label}}</a>
+<a [routerLink]='route' [ngClass]='styleBtn'>
+  <!-- transclusion -->
+  <ng-content></ng-content>
+  {{label}}
+</a>
 <!-- property binding avec les crochets [attribut] -->
 <!-- src, alt par exemple -->
 

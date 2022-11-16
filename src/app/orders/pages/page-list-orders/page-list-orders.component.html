@@ -11,7 +11,11 @@
   <tbody>
     <!-- itérer dans le tableau collection -->
     <tr *ngFor="let item of collection">
-      <td><app-btn (click)='goToEdit(item.id)' label='Editer' styleBtn='btn btn-warning'></app-btn></td>
+      <td>
+      <app-btn (click)='goToEdit(item.id)' label='Editer' styleBtn='btn btn-warning'>
+        <app-icon-nav></app-icon-nav>
+      </app-btn>
+    </td>
       <!-- pipe -->
       <td>{{item.typePresta | uppercase}}</td>
       <td>{{item.client}}</td>
